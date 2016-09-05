@@ -14,11 +14,14 @@ You need to instal the dependencies of the projeto. To do this, type:
 
 ```npm install``` 
 
-After the this, you're good to go.
-
-
 ## Running the web API
 
 In order to Run it, go to the folder *restful_api* and type:
 
 ```npm start```
+
+After this, a message will appear
+
+> Listening on port 3000
+
+When this message appears, you're good to go!
