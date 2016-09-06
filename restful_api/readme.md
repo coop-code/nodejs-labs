@@ -5,9 +5,9 @@ This project is a basic restful web api just for learnings purpose. This web api
 ## How to setup
 
 To setup the web api, first clone the repository with the command:
-'''
+```
 git clone https://github.com/coop-code/nodejs-labs.git
-''' 
+``` 
 
 The Restful Web Api is under the folder restful_api.
 You need to instal the dependencies of the projeto. To do this, type 'npm install' in the command prompt.
