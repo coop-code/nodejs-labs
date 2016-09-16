@@ -1,41 +1,49 @@
 [
  {
+	 "id" : 0, 
 	 "name": "Keyboard",
 	 "brand": "Logitech",
 	 "price": 40.00
 	 
  },
  {
+	 "id" : 1,
 	 "name": "Mouse",
 	 "brand": "Microsoft",
 	 "price": 20.00
  },
  {
+	 "id" : 2,
 	 "name": "Motherboard",
 	 "brand": "Asus",
 	 "price": 90.00
  },
  {
+	 "id" : 3,
 	 "name": "Motherboard",
 	 "brand": "Asus",
 	 "price": 110.00
  },
  {
+	 "id" : 4,
 	 "name": "Motherboard",
 	 "brand": "Gigabyte",
 	 "price": 70.00
  },
  {
+	 "id" : 5,
 	 "name": "Keyboard",
 	 "brand": "Microsoft",
 	 "price": 20.00
  },
  {
+	 "id" : 6,
 	 "name": "Mouse",
 	 "brand": "Razer",
 	 "price": 70.00
  },
  {
+	 "id" : 7,
 	 "name": "Keyboard",
 	 "brand": "Razer",
 	 "price": 150.00

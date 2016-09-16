@@ -47,7 +47,7 @@ function GetAllProducts(response){
 			console.log ('Connection OK!');
 			var collection = db.collection('tech_products');
 			/*Fields id, name and brand are returned. {} means no filters*/
-			collection.find({}, { name: 1, brand: 1, price: 1, _id : 0 }).toArray(function(err, result){
+			collection.find({}, { id: 1, name: 1, brand: 1, price: 1, _id : 0 }).toArray(function(err, result){
 				response.send(result);
 			});
 
