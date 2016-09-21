@@ -50,12 +50,33 @@ function GetAllProducts(response){
 			collection.find({}, { id: 1, name: 1, brand: 1, price: 1, _id : 0 }).toArray(function(err, result){
 				response.send(result);
 			});
-
+			
 			db.close();
 		}
 	});
 
 }
 
+function GetProduct(response, productID){
+	mongoClient.connect(url, function (err, db){
+		if (err) {
+			console.log ('Connection Failed. Error: ', err);
+		} else {
+			console.log ('Connection OK!');
+			var collection = db.collection('tech_products');
+			
+			/*Fields id, name and brand are returned. {} means no filters*/
+			collection.findOne({ id: productID }, { id: 1, name: 1, brand: 1, price: 1, _id : 0 }, function(err, result){
+				if(result === null){
+					response.status = "404";
+					response.message = "No entries found";
+				}
+			});
+			db.close();
+		}
+	});
+}
+
 exports.importData = importData;
 exports.GetAllProducts = GetAllProducts;
+exports.GetProduct = GetProduct;
