@@ -4,6 +4,7 @@ var router = express.Router();
 var jsonValidator = require('../common/validations/jsonValidation.js');
 var numberValidator = require('../common/validations/numberValidation.js');
 var dataConnection = require ('../data/dataConnection.js');
+var constants = require ('../common/const.js');
 var bodyParser = require('body-parser');
 
 var app = express();
@@ -64,7 +65,7 @@ router.get('/product/:id', function (req, res, next) {
 
 	} else {
 		res.status(400);
-		res.send('The Product id must be a number')
+		res.send('The Product id must be a number');
 	}
 });
 
