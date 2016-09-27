@@ -71,7 +71,7 @@ router.get('/product/:id', function (req, res, next) {
 
 /* POST a specific product */
 router.post('/products', function (req, res, next) {
-	//Content type must to be json
+	//Content type must be json
 	if (jsonValidator.isValidInput(req.headers['content-type'])) {
 		var json = req.body;
 		if (jsonValidator.isValidJson(json)) {
@@ -115,9 +115,13 @@ router.delete('/product/:id', function (req, res, next) {
 
 
 /* Load database initial data (the JSON document is created in dataConnection.js) */
-router.put('/mongo/products/import', function (req, res, next) {
+router.post('/mongo/products/import', function (req, res, next) {
+	try {
 	dataConnection.importData('tech_products');
 	res.send();
+	} catch(error){
+		console.log(error.message);
+	}
 });
 
 
@@ -125,6 +129,17 @@ router.put('/mongo/products/import', function (req, res, next) {
 router.get('/mongo/products', function (req, res, next) {
 	try {
 		dataConnection.GetAllProducts(res);
+	} catch (error) {
+		res.status(400);
+		res.send(error.message);
+	}
+
+});
+
+/*GET: get all products from database*/
+router.get('/mongo/products/:id', function (req, res, next) {
+	try {
+		dataConnection.GetProduct(res, parseInt(req.params.id));
 	} catch (error) {
 		res.status(400);
 		res.send(error.message);
